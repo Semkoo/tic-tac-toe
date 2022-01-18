@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { Home, Game } from "@screens";
 
@@ -9,12 +9,16 @@ export type StackNavigatorParams = {
     Game: { gameId: string };
 };
 
-const Stack = createStackNavigator<StackNavigatorParams>();
+const Stack = createNativeStackNavigator<StackNavigatorParams>();
 
 export default function Navigator(): ReactElement {
     return (
         <NavigationContainer>
-            <Stack.Navigator headerMode="none">
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false
+                }}
+            >
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Game" component={Game} />
             </Stack.Navigator>
