@@ -21,7 +21,7 @@ export default function home({ navigation }: HomeProps) {
                             navigation.navigate("SinglePlayerGame", { gameId: "1" });
                         }}
                         style={styles.button}
-                        title="SinglePlayerGame"
+                        title="SinglePlayer"
                     />
                     {/* <Button
                         onPress={() => {
